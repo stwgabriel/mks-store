@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: #0f52ba;
+  background: ${({ theme }) => theme.color.primary.main};
   border: none;
   border-radius: 1rem;
   cursor: pointer;
@@ -28,11 +28,11 @@ const Button = styled.button`
   }
 
   &:hover {
-    background: #0c4398;
+    background: ${({ theme }) => theme.color.primary.dark};
   }
 
   &:active {
-    background: #3575d8;
+    background: ${({ theme }) => theme.color.primary.light};
   }
 `;
 
