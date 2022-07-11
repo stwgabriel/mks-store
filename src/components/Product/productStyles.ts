@@ -2,16 +2,21 @@ import styled from 'styled-components';
 
 const ProductContainer = styled.li`
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 1rem #0001;
+  border: solid .2rem #00000007;
+  box-shadow: .5rem .5rem 1.5rem #0001;
   list-style: none;
+
+  flex: none;
 
   min-height: 35rem;
   width: 100%;
   max-width: 27rem;
 
+  margin: 2rem 1rem;
+
   overflow: hidden;
 
-  main {
+  main.product-main {
     display: flex;
     flex-direction: column;
 

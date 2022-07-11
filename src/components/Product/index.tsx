@@ -19,7 +19,7 @@ function Product({
 
   return (
     <ProductContainer>
-      <main>
+      <main className="product-main">
 
         <div className="product-image">
           <img src={imagePath} alt="" />
