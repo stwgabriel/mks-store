@@ -21,11 +21,30 @@ function Home() {
           className="cart-button"
         >
           <img src={cartIcon} alt="cart" />
+          0
         </button>
       </header>
 
-      <main>
+      <main className="page-main">
         <ul className="products-list">
+          <Product
+            title="Apple iPhone X 128GB"
+            price={899.00}
+            description="Redesigned from scratch and completely revised."
+            imagePath="/iphone-x.png"
+          />
+          <Product
+            title="Apple iPhone X 128GB"
+            price={899.00}
+            description="Redesigned from scratch and completely revised."
+            imagePath="/iphone-x.png"
+          />
+          <Product
+            title="Apple iPhone X 128GB"
+            price={899.00}
+            description="Redesigned from scratch and completely revised."
+            imagePath="/iphone-x.png"
+          />
           <Product
             title="Apple iPhone X 128GB"
             price={899.00}
