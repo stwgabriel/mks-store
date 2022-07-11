@@ -2,6 +2,7 @@ const lightTheme = {
   color: {
     background: '#fefefe',
     text: '#373737',
+    textReverse: '#fff',
 
     primary: {
       main: '#0f52ba',
