@@ -4,7 +4,7 @@ const Button = styled.button`
   background: ${({ theme }) => theme.color.primary.main};
   border: none;
   border-radius: 1rem;
-  cursor: pointer;
+  box-shadow: 0 0 0.4rem #0001;
 
   display: flex;
   align-items: center;
