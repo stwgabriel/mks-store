@@ -13,6 +13,8 @@ function Products() {
       const dataPromise = await fetch('https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=name&orderBy=ASC');
       const reqProducts = await dataPromise.json();
 
+      console.log(reqProducts);
+
       setProducts(reqProducts.products);
     })();
   }, []);
@@ -22,7 +24,7 @@ function Products() {
       {products?.map(product => (
         <Product
           key={product.id}
-          imagePath="/placeholder.webp"
+          imagePath={product.photo}
           title={product.name}
           price={product.price}
           description={product.description}

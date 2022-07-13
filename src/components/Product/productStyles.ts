@@ -37,7 +37,6 @@ const ProductContainer = styled.li`
         max-height: 15rem;
         width: 100%;
         object-fit: contain;
-        filter: grayscale(1);
       }
     }
     .product-info {
