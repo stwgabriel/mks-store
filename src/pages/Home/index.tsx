@@ -1,58 +1,59 @@
-import { HomeContainer } from './homeStyles';
+import { useRef, useState } from 'react';
 
 // icons
 import cartIcon from '../../assets/icons/cart.svg';
-import Product from '../../components/Product';
+import Cart from '../../components/Cart';
+
+// local styles
+import { HomeContainer } from './homeStyles';
+import Products from '../../components/Products';
 
 function Home() {
 
+  // refs
+  const cartTriggerRef = useRef(null);
+
+  // states
+  const [renderCart, setRenderCart] = useState(false);
+  function onCartRender() {
+    setRenderCart(prevState => !prevState);
+  }
+
   return (
     <HomeContainer>
-      <header>
+      <header className="page-header">
 
         <h1 className="page-logo">
           MKS
           {' '}
-          <span>Store</span>
+          <span>Sistemas</span>
         </h1>
 
-        <button
-          type="button"
-          className="cart-button"
-        >
-          <img src={cartIcon} alt="cart" />
-          0
-        </button>
+        <div className="cart-container">
+          <button
+            ref={cartTriggerRef}
+            type="button"
+            className="cart-button"
+            onClick={onCartRender}
+          >
+            <img src={cartIcon} alt="cart" />
+            0
+          </button>
+
+          {renderCart && (
+
+            <Cart
+              renderModal={() => onCartRender()}
+              additionalTrigger={cartTriggerRef?.current || undefined}
+            />
+          )}
+        </div>
       </header>
 
       <main className="page-main">
-        <ul className="products-list">
-          <Product
-            title="Apple iPhone X 128GB"
-            price={899.00}
-            description="Redesigned from scratch and completely revised."
-            imagePath="/iphone-x.png"
-          />
-          <Product
-            title="Apple iPhone X 128GB"
-            price={899.00}
-            description="Redesigned from scratch and completely revised."
-            imagePath="/iphone-x.png"
-          />
-          <Product
-            title="Apple iPhone X 128GB"
-            price={899.00}
-            description="Redesigned from scratch and completely revised."
-            imagePath="/iphone-x.png"
-          />
-          <Product
-            title="Apple iPhone X 128GB"
-            price={899.00}
-            description="Redesigned from scratch and completely revised."
-            imagePath="/iphone-x.png"
-          />
-        </ul>
+        <Products />
       </main>
+      <footer>{' '}</footer>
     </HomeContainer>
   );
 }

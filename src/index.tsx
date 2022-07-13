@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+//
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -15,11 +17,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
         <App />
-      </React.StrictMode>
-    </ThemeProvider>
-  </BrowserRouter>,
+      </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
 );

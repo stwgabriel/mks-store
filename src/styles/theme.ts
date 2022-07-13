@@ -9,6 +9,11 @@ const lightTheme = {
       light: '#3575d8',
       dark: '#0c4398',
     },
+
+    gray: {
+      main: '#D9D9D9',
+      light: '#F6F4F3',
+    },
   },
 };
 

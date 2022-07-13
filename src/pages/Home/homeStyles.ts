@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const HomeContainer = styled.div`
-  header {
+  .page-header {
     background: ${({ theme }) => theme.color.primary.main};
     box-shadow: 0 0.5rem 1rem #0000001a;
-    color: ${({ theme }) => theme.color.textReverse};
 
     display: flex;
     align-items: center;
@@ -12,10 +11,10 @@ const HomeContainer = styled.div`
 
     min-height: 10rem;
 
-    padding: 2rem 4rem;
+    padding: 2rem 5rem;
 
     h1 {
-
+      color: ${({ theme }) => theme.color.textReverse};
       font-size: 2.8rem;
 
       span {
@@ -24,21 +23,25 @@ const HomeContainer = styled.div`
       }
     }
 
-    .cart-button {
-      background: ${({ theme }) => theme.color.background};
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: 600;
+    .cart-container {
+      position: relative;
 
-      display: flex;
-      align-items: center;
+      .cart-button {
+        background: ${({ theme }) => theme.color.background};
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
 
-      padding: 0.8rem 1.6rem;
+        display: flex;
+        align-items: center;
 
-      img {
-        margin-right: 1.4rem;
-        width: 2rem;
+        padding: 0.8rem 1.6rem;
+
+        img {
+          margin-right: 1.4rem;
+          width: 2rem;
+        }
       }
     }
   }
@@ -53,6 +56,15 @@ const HomeContainer = styled.div`
       flex-wrap: wrap;
       width: fit-content;
       margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 595px) {
+    .page-header {
+      padding: 2rem 2rem;
+    }
+    main.page-main {
+      padding: 4rem 1rem;
     }
   }
 `;

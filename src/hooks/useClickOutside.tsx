@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 function useClickOutside(handler: () => void, additionalTriggerElement?: Element) {
 
-  const domNodeRef = useRef();
+  const domNodeRef = useRef(null);
 
   useEffect(() => {
 
@@ -20,7 +20,6 @@ function useClickOutside(handler: () => void, additionalTriggerElement?: Element
       const refElementDoesntContainsAnEventElement = !refElement.contains(eventElement);
       const additionalTriggerElementDoesntContainsAnEventElement = (
         !additionalTriggerElement?.contains(eventElement));
-
       if (
         refElementIsDifferentFromEventElement
         && refElementIsDifferentFromAdditionalTriggerElement

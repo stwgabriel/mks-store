@@ -1,4 +1,5 @@
 // icons
+import { memo } from 'react';
 import shoppingBagIcon from '../../assets/icons/shopping-bag.svg';
 import currencyFormatter from '../../utils/currencyFormatter';
 import Button from '../Button';
@@ -32,7 +33,10 @@ function Product({
           <div className="product-price">
             <span>{currencyFormatter({ currency: 'BRL', value: price })}</span>
           </div>
-          <p className="product-description">
+          <p
+            title={description}
+            className="product-description"
+          >
             {description}
           </p>
         </div>
@@ -47,4 +51,4 @@ function Product({
   );
 }
 
-export default Product;
+export default memo(Product);
